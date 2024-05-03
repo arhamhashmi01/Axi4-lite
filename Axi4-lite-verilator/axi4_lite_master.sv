@@ -36,6 +36,7 @@ module axi4_lite_master #(
         //Read Address Channel INPUTS
         input                           M_ARREADY,
         //Read Data Channel INPUTS
+        /* verilator lint_off UNUSED */
         input          [DATA_WIDTH-1:0] M_RDATA,
         input               [1:0]       M_RRESP,
         input                           M_RVALID,

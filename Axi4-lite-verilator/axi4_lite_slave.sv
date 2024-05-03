@@ -33,6 +33,7 @@ module axi4_lite_slave #(
         //Read Data Channel INPUTS
         input                           S_RREADY,
         //Write Address Channel INPUTS
+        /* verilator lint_off UNUSED */
         input           [ADDRESS-1:0]   S_AWADDR,
         input                           S_AWVALID,
         //Write Data  Channel INPUTS
