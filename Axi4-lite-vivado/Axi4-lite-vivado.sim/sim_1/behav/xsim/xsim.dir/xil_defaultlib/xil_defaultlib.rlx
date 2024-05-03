@@ -5,4 +5,5 @@ Jun 14 2018
 E:/projects/Axi4-lite/Axi4-lite-vivado/Axi4-lite-vivado.sim/sim_1/behav/xsim/glbl.v,1529022455,verilog,,,,glbl,,,,,,,,
 E:/sv-vivado/axi/axi4_lite_master.sv,1714763765,systemVerilog,,E:/sv-vivado/axi/axi4_lite_slave.sv,,axi4_lite_master,,,,,,,,
 E:/sv-vivado/axi/axi4_lite_slave.sv,1714764622,systemVerilog,,E:/sv-vivado/axi/axi4_lite_top.sv,,axi4_lite_slave,,,,,,,,
-E:/sv-vivado/axi/axi4_lite_top.sv,1714764622,systemVerilog,,,,axi4_lite_top,,,,,,,,
+E:/sv-vivado/axi/axi4_lite_top.sv,1714764622,systemVerilog,,E:/sv-vivado/axi/axi4_lite_top_tb.sv,,axi4_lite_top,,,,,,,,
+E:/sv-vivado/axi/axi4_lite_top_tb.sv,1714763740,systemVerilog,,,,axi4_lite_tb,,,,,,,,
