@@ -87,9 +87,11 @@ module axi4_lite_slave #(
 
     always_ff @(posedge ACLK) begin
         // Reset the register array
-        for (i = 0; i < 32; i++) begin
-            register[i] <= 32'b0;
-        end 
+        if (~ARESETN) begin
+            for (i = 0; i < 32; i++) begin
+                register[i] <= 32'b0;
+            end
+        end
         else begin
             if (state == WRITE_CHANNEL) begin
                 register[S_AWADDR] <= S_WDATA;
