@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/sv-vivado/axi/axi4_lite_slave.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axi4_lite_slave
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "E:/sv-vivado/axi/axi4_lite_top.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module axi4_lite_top
