@@ -60,9 +60,29 @@ module axi4_lite_slave #(
 
     logic [DATA_WIDTH-1 : 0] register [no_of_registers-1 : 0];
     logic [ADDRESS-1 : 0]    addr;
+    logic  write_addr;
+    logic  write_data;
 
     typedef enum logic [2 : 0] {IDLE,WRITE_CHANNEL,WRESP__CHANNEL, RADDR_CHANNEL, RDATA__CHANNEL} state_type;
     state_type state , next_state;
+
+    // AR
+    assign S_ARREADY = (state == RADDR_CHANNEL) ? 1 : 0;
+    // 
+    assign S_RVALID = (state == RDATA__CHANNEL) ? 1 : 0;
+    assign S_RDATA  = (state == RDATA__CHANNEL) ? register[addr] : 0;
+    assign S_RRESP  = (state == RDATA__CHANNEL) ?2'b00:0;
+    // AW
+    assign S_AWREADY = (state == WRITE_CHANNEL) ? 1 : 0;
+    // W
+    assign S_WREADY = (state == WRITE_CHANNEL) ? 1 : 0;
+    assign write_addr = S_AWVALID && S_AWREADY;
+    assign write_data = S_WREADY &&S_WVALID;
+    // B
+    assign S_BVALID = (state == WRESP__CHANNEL) ? 1 : 0;
+    assign S_BRESP  = (state == WRESP__CHANNEL )? 0:0;
+
+    integer i;
 
     always_ff @(posedge ACLK) begin
         // Reset the register array
@@ -86,5 +106,26 @@ module axi4_lite_slave #(
         else begin
             state <= next_state;
         end
+    end
+
+    always_comb begin
+		case (state)
+            IDLE : begin
+                if (S_AWVALID) begin
+                    next_state = WRITE_CHANNEL;
+                end 
+                else if (S_ARVALID) begin
+                    next_state = RADDR_CHANNEL;
+                end 
+                else begin
+                    next_state = IDLE;
+                end
+            end
+            RADDR_CHANNEL   : if (S_ARVALID && S_ARREADY ) next_state = RDATA__CHANNEL;
+            RDATA__CHANNEL  : if (S_RVALID  && S_RREADY  ) next_state = IDLE;
+            WRITE_CHANNEL   : if (write_addr &&write_data) next_state = WRESP__CHANNEL;
+            WRESP__CHANNEL  : if (S_BVALID  && S_BREADY  ) next_state = IDLE;
+            default : next_state = IDLE;
+        endcase
     end
 endmodule
