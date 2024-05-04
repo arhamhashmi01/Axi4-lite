@@ -1,0 +1,12 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../Axi4-lite-vivado.srcs/sources_1/new/axi4_lite_master.sv" \
+"../../../../Axi4-lite-vivado.srcs/sources_1/new/axi4_lite_slave.sv" \
+"../../../../Axi4-lite-vivado.srcs/sources_1/new/axi4_lite_top.sv" \
+"../../../../Axi4-lite-vivado.srcs/sim_1/new/axi4_lite_top_tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
