@@ -2,15 +2,18 @@
 ## Introduction to AXI4-Lite
 Advanced eXtensible Interface 4 (AXI4) is a family of buses defined as part of the fourth generation of the ARM Advanced Microcontroler Bus Architectrue (AMBA) standard. AXI was first introduced with the third generation of AMBA, as AXI3, in 1996.
 
-The AMBA specification defines 3 AXI4 protocols:
+**The AMBA specification defines 3 AXI4 protocols:**
 
-AXI4: A high performance memory mapped data and address interface. Capable of Burst access to memory mapped devices.
-AXI4-Lite: A subset of AXI, lacking burst access capability. Has a simpler interface than the full AXI4 interface.
-AXI4-Stream: A fast unidirectional protocol for transfering data from master to slave.
-Use in Xilinx-Based designs
+**AXI4:** A high performance memory mapped data and address interface. Capable of Burst access to memory mapped devices.
+**AXI4-Lite:** A subset of AXI, lacking burst access capability. Has a simpler interface than the full AXI4 interface.
+**AXI4-Stream:** A fast unidirectional protocol for transfering data from master to slave.
+
+**Use in Xilinx-Based designs**
+
 Xilinx Vivado helps in the creation of custom IP with AXI4 interfaces. These can be connected to the Zynq’s Proccessing System or to other devices. This Document will cover the operation of the AXI4-Lite interface, which is convenient for implementing memory mapped registers.
 
-AXI4-Lite Interface Signals
+**AXI4-Lite Interface Signals**
+
 The AXI4-Lite interface consists of five channels: Read Address, Read Data, Write Address, Write Data, and Write Response. An AXI4 read transaction using the Read Address and Data channels is shown in figure 1. Similarly an AXI4 write transaction using the Write Address, Data, and Response channels is shown in figure 2. Note that these figures depict burst transfers, which AXI4-Lite is incapable of.
 <img src="https://github.com/arhamhashmi01/Axi4-lite/blob/main/block-diagram.png" alt="block diagram of axi4-lite transaction">
 
