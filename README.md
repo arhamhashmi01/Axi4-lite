@@ -72,4 +72,4 @@ To begin exploring the AXI4-Lite interface protocol:
   **5)** Experiment with the design, explore optimizations, or integrate additional features to further enhance the processor's capabilities.
 
 ## Contribution
-Contributions to this project are highly encouraged and appreciated! Whether it's bug fixes, feature enhancements, or optimizations, your contributions can help improve the overall quality and functionality of the RV32I 5-Stage Pipeline Processor.
+Contributions to this project are highly encouraged and appreciated! Whether it's bug fixes, feature enhancements, or optimizations, your contributions can help improve the overall quality and functionality of the AXI4-Lite interface protocol.
