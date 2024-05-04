@@ -67,7 +67,7 @@ To begin exploring the AXI4-Lite interface protocol:
      cd Axi4-lite
 
   **3)** **For Verilaor:**
-      make
+      Run make -> then 
       make wave
 
   **4)** **For Vivado:** You can directly get access by the folder by opning it on vivado 
